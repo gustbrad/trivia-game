@@ -1,0 +1,104 @@
+.jumbotron{
+    background: transparent;
+   color:gold; 
+}
+
+.main{
+    background-image: url(../images/stars.jpg);
+    height: 100%; 
+    width: 100%;
+    background-size: 100% 100%;
+    z-index: 10;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+} 
+
+
+#answerimage{
+
+    /* Positioning */
+     margin: 0 auto;
+
+    /* Box-model */
+    width: 400px;
+
+    /* Typography */
+    text-align: center;
+
+  }
+#show-number, #question, #answer1, #answer2, #answer3, #answer4, #guess {
+    background: transparent;
+    text-align: center;
+    color:gold;
+    
+}
+
+.answercard, .guesscard, .guesscard1, .guesscard2, .score{
+    background: transparent;
+    text-align: center;
+    color:gold;
+}
+
+
+  
+  #buttons {
+
+    display: block;
+    /* Positioning */
+    margin:  0 auto;
+
+    /* Typography */
+    text-align: center;
+
+  }
+
+  button {
+
+    /* Box-model */
+    width: 500px;
+    height: 100px;
+
+    display: block;
+    /* Positioning */
+    margin:  0 auto;
+
+    /* Typography */
+    text-align: center;
+
+  }
+
+.col-md-4{
+   color: goldenrod;
+   background-color: black
+}
+
+
+
+#info{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 150px;
+    width: 150px;
+    color: goldenrod;
+   background-color: black
+}
+
+h4{
+   
+    text-align: center;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+  }
+  .row > [class*='col-'] {
+    display: flex;
+    flex-direction: row;
+  }
+

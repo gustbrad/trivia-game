@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <!-- Linking CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!--Page Title-->
+        <title>Trivia Game</title>
+    </head>
+    
+    <!-- Linking javascript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+      <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Overall Bootstrap Grid -->
+    <div class="container">
+    
+    <!--Calls Function that starts the game-->
+    <body onload= "doItAll()" class="main" >
+
+        <!-- Jumbotron with Title -->
+        <div class="jumbotron">
+            <h1 class="text-center">
+              <strong>Star Wars Trivia</strong>
+            </h1>
+        </div>
+        <!-- Card to hold images and text from game -->
+        <content> 
+            <div class="card">
+                <div class="col-md-12 col-sm-12 p-3">
+                    <button id="start"><h2>Start</h2></button>
+                    <div id="show-number"></div>
+                    <div class="questioncard"><div id="question"></div></div>
+                    <div class="answercard"><div id="answer1"></div></div>
+                    <div class="answercard"><div id="answer2"></div></div>
+                    <div class="answercard"><div id="answer3"></div></div>
+                    <div class="answercard"><div id="answer4"></div></div>
+                    <div class="guesscard1"><div id="guess1"></div></div>
+                    <div class="guesscard2"><div id="guess2"></div></div>
+                    <div class="guesscard"><div id="guess"></div></div>
+                    <div class="score"><div id="correct"></div></div>
+                    <div class="score"><div id="incorrect"></div></div>
+                    <div class="score"><div id="totalCorrect"></div></div>
+                    <div class="score"><div id="totalIncorrect"></div></div>
+                    <div class="score"><div id="rounds"></div></div>
+                    <div class="answerimg"><div id="answerimage"></div></div>
+                </div>
+            </div>
+        </content>
+    </body>
+</html>
