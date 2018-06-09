@@ -35,9 +35,12 @@
 }
 
 .answercard, .guesscard, .guesscard1, .guesscard2, .score{
+    width:500px;
+    margin:  0 auto;
     background: transparent;
     text-align: center;
     color:gold;
+    
 }
 
 

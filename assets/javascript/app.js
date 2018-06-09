@@ -1,4 +1,5 @@
   
+  
 // Variable to hold the index of current question.
 var questionIndex = 0;
 
@@ -6,7 +7,7 @@ var questionIndex = 0;
 var count = 0;
 
 //Images array
-var images = ["assets/images/q1.gif", "assets/images/q2.gif", "assets/images/q3.gif","assets/images/q4.gif" ];
+var images = ["assets/images/q1.gif", "assets/images/q2.gif", "assets/images/q3.gif","assets/images/q4.gif","assets/images/q5.gif"  ];
 
 //Variable to hold the total correct
 var correctq = 0;
@@ -23,11 +24,18 @@ var totalIncorrect = 0;
 //Variable to hold how many rounds played
 var rounds = 0;
 
+//Variable to link audio
+var audio = new Audio();
+var playlist = new Array('assets/sounds/q1.mp3','assets/sounds/q2.WAV','assets/sounds/q3.mp3','assets/sounds/q4.mp3','assets/sounds/q5.mp3');
+
+
+
 //Questions Array- D is always the correct answer, but "D" is hidded from user
 var questions = [
   { q: "Who said, that's no moon-it's a space station?", a: "Luke Skywalker", b: "C-3P0", c: "Han Solo", d: "Obi-Wan Kenobi" },
   { q: "Where did Luke Skywalker bull's-eye womp rats?", a: "Ben's Mesa", b: "Mushroom Flats", c: "Hutt Flats", d: "Beggar's Canyon" },
   {q: "What is the name of Darth Vader's Star Destroyer?", a: "The Avenger", b: "The Stalker", c: "The Imperial", d: "The Executor" },
+  {q: "Where did Obi-Wan tell Luke Skywalker to go?", a: "Back to Echo Base", b: "To Coruscant", c: "To Tatooine", d: "To Dagobah" },
   {q: "What creature did Luke Skywalker kill in Jabba the Hutt's palace?", a: "Gorax", b: "Worrt", c: "Sarlacc", d: "Rancor" }
 ];
 
@@ -94,6 +102,16 @@ function doItAll() {
         $("#answer2").html("<h1>" + questions[questionIndex].b + "</h1>");
         $("#answer3").html("<h1>" + questions[questionIndex].c + "</h1>");
         $("#answer4").html("<h1>" + questions[questionIndex].d + "</h1>");
+      
+        $(function() {
+          $(".answercard").hover(
+          function() {
+              $(this).css('background-color', 'orange')
+          }, 
+          function() {
+              $(this).css('background-color', '')
+          });
+      })
       }
       
       // If there aren't, render the end game screen.
@@ -106,7 +124,7 @@ function doItAll() {
         $(".score").show();
         $("#question").html("<h1>" + "Game Over!" + "</h1>");
         $("#correct").html("<h1>" + "Total correct this round: " + correctq + "</h1>");
-        $("#incorrect").html("<h1>" + "Total incorrec: this round: " + incorrect + "</h1>");
+        $("#incorrect").html("<h1>" + "Total incorrect this round: " + incorrect + "</h1>");
         $("#totalCorrect").html("<h1>" + "Total correct for all rounds: " + totalCorrect + "</h1>");
         $("#totalIncorrect").html("<h1>" + "Total incorrect for all rounds: " + totalIncorrect + "</h1>");
         $("#rounds").html("<h1>" + "Rounds played so far " + rounds + "</h1>");
@@ -160,12 +178,16 @@ function doItAll() {
     $(".answerimg").show();
     $(".answerimg").show();
     $("#answerimage").html("<img src=" + images[count] + " width='400px'>");
+    
+    //Play audio clip
+    audio.src = (playlist[count]);
+    audio.play();
 
     correctq ++;
     totalCorrect ++;
 
     //Timer for after answering
-    setTimeout(fiveSeconds,3000);
+    setTimeout(fiveSeconds,5000);
   }
 
   //Function that gets called if the answer chosen is wrong
@@ -180,11 +202,15 @@ function doItAll() {
     $(".answerimg").show();
     $("#answerimage").html("<img src=" + images[count] + " width='400px'>");
 
+    //Play audio clip
+    audio.src = (playlist[count]);
+    audio.play();
+    
     incorrect ++;
     totalIncorrect ++;
     
     //Timer for after answering
-    setTimeout(fiveSeconds,3000);
+    setTimeout(fiveSeconds,5000);
   }
 
     //Function that gets called if the answer chosen is wrong
@@ -200,7 +226,7 @@ function doItAll() {
       $("#answerimage").html("<img src=" + images[count] + " width='400px'>");
       
       //Timer for after answering
-      setTimeout(fiveSeconds,3000);
+      setTimeout(fiveSeconds,5000);
     }
   
   //Click function for the correct answer no matter which order it is in
@@ -234,3 +260,4 @@ function fiveSeconds() {
   questionIndex++;
   $("#start").trigger('click');
 }
+
